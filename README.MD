@@ -28,9 +28,9 @@ https://www.youtube.com/watch?v=R6JomxUjTq8
 * Show all tasks\
 ```./gradlew showTasks```
 * Copy the task's files to your module\
-```./gradlew -Ptask=<TaskName> copyTask```
+```.\gradlew -Ptask=<TaskName> copyTask```
 * Example\
-```./gradlew -Ptask=week1 copyTask```
+```.\gradlew -Ptask=week1 copyTask```
 * Check your module(```student-module```), there must be packages of the copied task
 * To find and run tests for the specific task
     * Ctrl + Click on your method in some class, 
