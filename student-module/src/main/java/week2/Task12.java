@@ -12,7 +12,33 @@ public class Task12 {
 
         int number = Integer.parseInt(args[0]);
 
-        //        Yours code...
+        int size = 0;
+        if (number != 0) {
+            for (int i = 0; ; i++) {
+                if (number / Math.pow(10, i) >= 1) {
+                    size++;
+                } else {
+                    break;
+                }
+            }
+        } else {
+            size = 1;
+        }
 
+        int result = 0;
+        if (size == 1 && number % 10 == 8) {
+                result++;
+        } else {
+            int[] array = new int[size];
+            for (int i = 0; i < size; i++) {
+                array[i] = (int)((number / Math.pow(10,i)) % 10);
+            }
+            for (int i = 0; i < size; i++) {
+                if (array[i] == 8) {
+                    result++;
+                }
+            }
+        }
+        System.out.println(result);
     }
 }

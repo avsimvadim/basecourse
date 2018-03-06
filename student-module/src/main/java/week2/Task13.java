@@ -16,7 +16,18 @@ public class Task13 {
 
         int number = Integer.parseInt(args[0]);
 
-        //        Yours code...
-
+        if (number == 0) {
+            System.out.println("0");
+        } else if (number == 1) {
+            System.out.println("1");
+        } else {
+            int[] array = new int[number + 1];
+            array[0] = 0;
+            array[1] = 1;
+            for (int i = 2; i <= number; i++) {
+                array[i] = array[i - 1] + array[i - 2];
+            }
+            System.out.println(array[number]);
+        }
     }
 }

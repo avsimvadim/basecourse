@@ -21,7 +21,7 @@ public class Task14Test extends ConsoleWrapperFixture {
     @Test
     public void main2Test() throws Exception {
 
-        Task14.main(new String[]{"-242"});
+        Task14.main(new String[]{"-199"});
 
         String consoleResults = consoleOutByteArray.toString();
         restoreSystemOutAndPrintInterceptedMessages(consoleResults);
@@ -43,7 +43,7 @@ public class Task14Test extends ConsoleWrapperFixture {
     @Test
     public void main4Test() throws Exception {
 
-        Task14.main(new String[]{"117"});
+        Task14.main(new String[]{"113"});
 
         String consoleResults = consoleOutByteArray.toString();
         restoreSystemOutAndPrintInterceptedMessages(consoleResults);

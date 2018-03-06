@@ -15,6 +15,19 @@ public class Task8 {
 
         int[] array = TaskUtils.arrayConverter(args);
 
+        if (array == null) {
+            System.out.println("null");
+        } else if (array.length == 0) {
+            System.out.println("{}");
+        } else {
+            int count = 0;
+            for (int i = 0; i < array.length; i++) {
+                if (array[i] == 5) {
+                    count++;
+                }
+            }
+            System.out.println(count);
+        }
         //        Yours code...
 
     }

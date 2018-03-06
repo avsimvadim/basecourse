@@ -23,14 +23,68 @@ public class Task6 {
             System.out.println("null");
         } else if (array.length == 0) {
             System.out.println("{}");
-        } else {
+        } else  if (array.length % 2 == 0){
 
-            double sum = 0;
-            for (int i = 0; i < array.length; i++) {
-                sum += array[i];
+            double sum1 = 0;
+            double sum2 = 0;
+
+            for (int i = 0; i < array.length / 2; i++) {
+                sum1 += array[i];
             }
-            System.out.println(sum / array.length);
+            for (int i = array.length / 2; i < array.length; i++) {
+                sum2 += array[i];
+            }
 
+            if ( sum1 > sum2 ) {
+                System.out.print("{");
+                for (int i = 0; i < array.length / 2 - 1; i++) {
+                    System.out.print(array[i] + ", ");
+                }
+                System.out.print(array[array.length / 2 - 1] + "}");
+            } else if ( sum1 < sum2 ) {
+                System.out.print("{");
+                for (int i = array.length / 2; i < array.length  - 1; i++) {
+                    System.out.print(array[i] + ", ");
+                }
+                System.out.print(array[array.length - 1] + "}");
+            } else {
+                System.out.print("{");
+                for (int i = 0; i < array.length  - 1; i++) {
+                    System.out.print(array[i] + ", ");
+                }
+                System.out.print(array[array.length - 1] + "}");
+            }
+
+        } else {
+            double sum1 = 0;
+            double sum2 = 0;
+
+            for (int i = 0; i < array.length / 2; i++) {
+                sum1 += array[i];
+            }
+            for (int i = array.length / 2 + 1; i < array.length; i++) {
+                sum2 += array[i];
+            }
+
+            if ( sum1 > sum2 ) {
+                System.out.print("{");
+                for (int i = 0; i < array.length / 2 - 1; i++) {
+                    System.out.print(array[i] + ", ");
+                }
+                System.out.print(array[array.length / 2 - 1] + "}");
+            } else if ( sum1 < sum2 ) {
+                System.out.print("{");
+                for (int i = array.length / 2 + 1; i < array.length  - 1; i++) {
+                    System.out.print(array[i] + ", ");
+                }
+                System.out.print(array[array.length - 1] + "}");
+            } else {
+                System.out.print("{");
+                for (int i = 0; i < array.length  - 1; i++) {
+                    System.out.print(array[i] + ", ");
+                }
+                System.out.print(array[array.length - 1] + "}");
+            }
         }
     }
 }

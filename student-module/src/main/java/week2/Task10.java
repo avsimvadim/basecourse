@@ -14,8 +14,12 @@ public class Task10 {
     public static void main(String[] args) {
 
         int[] number = TaskUtils.arrayConverter(args);
-
-        //        Yours code...
-
+        double result = 0.0;
+        for (int i = 0; i < number.length; i++) {
+            if ( number[number.length - 1 - i] == 1) {
+                result += Math.pow(2,i);
+            }
+        }
+        System.out.println((int)result);
     }
 }

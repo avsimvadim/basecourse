@@ -19,6 +19,15 @@ public class Task7 {
         int[] arr1 = TaskUtils.arrayConverter(Arrays.copyOfRange(args,0,  args.length / 2));
         int[] arr2 = TaskUtils.arrayConverter(Arrays.copyOfRange(args, args.length / 2,  args.length));
 
+        int[] arrSum = new int[arr1.length];
+        for (int i = 0; i < arr1.length ; i++) {
+            arrSum[i] = arr1[i] + arr2[i];
+        }
+        System.out.print("{");
+        for (int i = 0; i < arr1.length - 1; i++) {
+            System.out.print(arrSum[i] + ", ");
+        }
+        System.out.print(arrSum[arr1.length - 1] + "}");
         //        Yours code...
 
     }

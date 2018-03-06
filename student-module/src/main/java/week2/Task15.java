@@ -16,8 +16,19 @@ public class Task15 {
 
         int[] array = TaskUtils.arrayConverter(Arrays.copyOfRange(args, 1, args.length));
         int position = Integer.parseInt(args[0]);
+        int a = 0;
+        for (int j = 0; j < position; j++) {
+            for (int i = 0; i < array.length; i++) {
+                a = array[i];
+                array[i] = array[array.length - 1];
+                array[array.length - 1] = a;
+            }
+        }
 
-        //        Yours code...
-
+        System.out.print("{");
+        for (int i = 0; i < array.length - 1; i++) {
+            System.out.print(array[i] + ", ");
+        }
+        System.out.print(array[array.length - 1] + "}");
     }
 }
