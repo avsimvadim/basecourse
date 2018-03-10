@@ -66,7 +66,21 @@ public class ArrayUtils {
      *
      */
     public static int findMax(int[] array){
-        return 0;
+        if (array == null) {
+            System.out.println("NullPointerException");
+            return -1;
+        } else if (array.length == 0) {
+            System.out.println("EmptyArrayException");
+            return -1;
+        } else {
+            int max = array[0];
+            for (int i = 1; i < array.length; i++) {
+                if (max < array[i]) {
+                    max = array[i];
+                }
+            }
+            return max;
+        }
     }
 
     /**
@@ -112,8 +126,27 @@ public class ArrayUtils {
      *          или пустой массив, если size == 0
      *
      */
-    public static int[] generateRandomEvenOddArray(int size, int min, int max){
-        return null;
+    public static int[] generateRandomEvenOddArray(int size, int min, int max) {
+        if (size < 0 || min >= max) {
+            return null;
+        } else if (size == 0) {
+            int[] array = new int[size];
+            return array;
+        } else {
+            int[] array = new int[size];
+            for (int i = 0; i < array.length; i++) {
+                if (i % 2 == 0) {
+                    do {
+                        array[i] = (int) (min + Math.random() * (max - min));
+                    } while (array[i] % 2 != 0);
+                } else {
+                    do {
+                        array[i] = (int) (min + Math.random() * (max - min));
+                    } while (array[i] % 2 == 0);
+                }
+            }
+            return array;
+        }
     }
 
     /**
@@ -130,7 +163,20 @@ public class ArrayUtils {
      *
      */
     public static String arrayToString(int[] array){
-        return "{}";
+        if (array == null) {
+            return "null";
+        } else if (array.length == 0) {
+            return new String("{}");
+        } else {
+            String result = "{";
+            for (int i = 0; i < array.length - 1; i++) {
+                result += array[i];
+                result += ", ";
+            }
+            result += array[array.length - 1];
+            result += "}";
+            return result;
+        }
     }
 
     /**
@@ -147,7 +193,20 @@ public class ArrayUtils {
      *
      */
     public static String arrayToString(char[] array){
-        return "{}";
+        if (array == null) {
+            return "null";
+        } else if (array.length == 0) {
+            return new String("{}");
+        } else {
+            String result = "{";
+            for (int i = 0; i < array.length - 1; i++) {
+                result += array[i];
+                result += ", ";
+            }
+            result += array[array.length - 1];
+            result += "}";
+            return result;
+        }
     }
 
     /**
@@ -164,7 +223,20 @@ public class ArrayUtils {
      *
      */
     public static String arrayToString(String[] array){
-        return "{}";
+        if (array == null) {
+            return "null";
+        } else if (array.length == 0) {
+            return new String("{}");
+        } else {
+            String result = "{";
+            for (int i = 0; i < array.length - 1; i++) {
+                result += array[i];
+                result += ", ";
+            }
+            result += array[array.length - 1];
+            result += "}";
+            return result;
+        }
     }
 
     /**
